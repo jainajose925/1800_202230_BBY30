@@ -1,4 +1,4 @@
-## My Web Application (Add your Title here)
+1w## My Web Application (Add your Title here)
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+* Hi my name is Jaskaran. I am excited for this project cause of you guys.
 	
 ## Technologies
 Technologies used for this project:
