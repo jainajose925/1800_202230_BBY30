@@ -7,6 +7,7 @@
 ## General Info
 This browser based web application to ...
 Hi my name is Jaina :)
+Hello, it's Pavanpreet!
 	
 ## Technologies
 Technologies used for this project:
