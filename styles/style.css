@@ -1,6 +1,6 @@
 .week {
     margin: auto;
-    width: 50%;
+    width: 80%;
     height: 200px;
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
@@ -11,7 +11,7 @@
 }
 
 #breakfastButtons {
-    width: 50%;
+    width: 80%;
     display: flex;
     margin: auto;
     justify-content: center;
@@ -19,13 +19,14 @@
 }
 
 #ate {
-    flex: 30%;
+    flex: 40%;
     height: 40px;
 }
 
 #noeat {
     height: 40px;
-    flex: 20%;
+    flex: 30%;
+    font-size: small;
 }
 
 #weektitle {
