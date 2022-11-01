@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/index.css">
 
 </head>
 
@@ -43,10 +43,24 @@
         <a class="navbar-brand" href="#">Botanical Breakfast</a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Breakfast Recipes</a>
+            <a class="nav-link active" aria-current="page" href="./currentmonth.html">Progress</a>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Breakfast Recipes
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">All</a></li>
+                <li><a class="dropdown-item" href="#">Grab N' Go</a></li>
+                <li><a class="dropdown-item" href="#">High Protein</a></li>
+                <li><a class="dropdown-item" href="#">Vegetarian</a></li>
+              </ul>
+            </div>
+            
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">My Account</a>
@@ -55,10 +69,6 @@
             <a class="nav-link" href="#">Settings</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     </div>
   </nav>
@@ -72,7 +82,7 @@
     <div class="welcome banner"></div>
 
     <div class="px-4 pt-5 my-5 text-center">
-      <h1 class="display-4">Good morning, user!</h1>
+      <h1 class="display-4">Good morning, <span id="user-goes-here"></span>!</h1>
       <div class="overflow-hidden" style="max-height: 30vh;">
         <div class="container px-5">
           <img src="images/happy_plant_pot.png" class=" rounded-3  mb-4" alt="Example image" width="256" height="256">

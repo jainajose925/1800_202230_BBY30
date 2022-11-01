@@ -2,7 +2,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 50% 6% 60%;
+    grid-template-rows: 50% 6% 56%;
     grid-template-areas: "sky" "grass" "ground";
 }
 
@@ -17,7 +17,7 @@
 }
 
 #ground {
-    background-color: #735912;
+    background-color: #6d412b;
     grid-area: ground;
 }
 
@@ -39,19 +39,22 @@
     margin: auto;
     justify-content: center;
     align-items: center;
-    background-color: aliceblue;
     margin-top: 40px;
 }
 
 #ate {
     flex: 40%;
     height: 40px;
+    background-color: #7ffaa0;
+    color: #076327;
 }
 
 #noeat {
     height: 40px;
     flex: 30%;
     font-size: small;
+    background-color: #f78691;
+    color: #66060f;
 }
 
 #weektitle {

@@ -1,0 +1,155 @@
+a:link, a:visited, a:hover, a:active {
+    color: #076327;
+    text-decoration: none;
+}  
+
+body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 95% 6% 27%;
+    grid-template-areas: "sky" "grass" "ground";
+}
+
+#sky {
+    background-color: lightblue;
+    grid-area: sky;
+}
+
+#grass {
+    background-color: #abf56e;
+    grid-area: grass;
+}
+
+#ground {
+    background-color: #6d412b;
+    grid-area: ground;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h5 {
+    color: white;
+}
+
+#greenBox {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
+    flex-shrink: 0.5;
+    width: 40px;
+    height: 40px;
+    background-color: #7ffaa0;
+}
+
+#greenBoxL, #redBoxL {
+    margin-top: 15px;
+    flex: 80%;
+}
+
+#redBox {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 5px;
+    flex-shrink: 0.5;
+    width: 40px;
+    height: 40px;
+    background-color: #f78691;
+}
+
+#backhome {
+    background-color: #7ffaa0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 65%;
+}
+
+.day, .dayNum{background-color: lightgray; text-align: center;}
+
+main {
+    background-color: aliceblue;
+    border: solid;
+    border-color: aliceblue;
+    border-width: 3px;
+    width: 90%;
+    height: 500px;
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-column-gap: 3px;
+    grid-row-gap:3px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.34fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "month month month month month month month"
+        "sun mon tues wed thurs fri sat"
+        "w1d1 w1d2 w1d3 w1d4 w1d5 w1d6 w1d7"
+        "w2d1 w2d2 w2d3 w2d4 w2d5 w2d6 w2d7"
+        "w3d1 w3d2 w3d3 w3d4 w3d5 w3d6 w3d7"
+        "w4d1 w4d2 w4d3 w4d4 w4d5 w4d6 w4d7"
+        "w5d1 w5d2 w5d3 w5d4 w5d5 w5d6 w5d7";
+}
+
+#month {
+    text-align: center;
+    background-color: lightgray;
+    grid-area: month;
+}
+
+#month > h2 {
+    margin-top: 20px;
+}
+
+#sunday {grid-area: sun;}
+#monday {grid-area: mon;}
+#tuesday {grid-area: tues;}
+#wednesday {grid-area: wed;}
+#thursday {grid-area: thurs;}
+#friday {grid-area: fri;}
+#saturday {grid-area: sat;}
+
+/*WEEK1*/
+#w1d1 {grid-area: w1d1;}
+#w1d2 {grid-area: w1d2;}
+#w1d3 {grid-area: w1d3;}
+#w1d4 {grid-area: w1d4;}
+#w1d5 {grid-area: w1d5;}
+#w1d6 {grid-area: w1d6;}
+#w1d7 {grid-area: w1d7;}
+
+/*WEEK 2*/
+#w2d1 {grid-area: w2d1;}
+#w2d2 {grid-area: w2d2;}
+#w2d3 {grid-area: w2d3;}
+#w2d4 {grid-area: w2d4;}
+#w2d5 {grid-area: w2d5;}
+#w2d6 {grid-area: w2d6;}
+#w2d7 {grid-area: w2d7;}
+
+/*WEEK 3*/
+#w3d1 {grid-area: w3d1;}
+#w3d2 {grid-area: w3d2;}
+#w3d3 {grid-area: w3d3;}
+#w3d4 {grid-area: w3d4;}
+#w3d5 {grid-area: w3d5;}
+#w3d6 {grid-area: w3d6;}
+#w3d7 {grid-area: w3d7;}
+
+/*WEEK 4*/
+#w4d1 {grid-area: w4d1;}
+#w4d2 {grid-area: w4d2;}
+#w4d3 {grid-area: w4d3;}
+#w4d4 {grid-area: w4d4;}
+#w4d5 {grid-area: w4d5;}
+#w4d6 {grid-area: w4d6;}
+#w4d7 {grid-area: w4d7;}
+
+/*WEEK 5*/
+#w5d1 {grid-area: w5d1;}
+#w5d2 {grid-area: w5d2;}
+#w5d3 {grid-area: w5d3;}
+#w5d4 {grid-area: w5d4;}
+#w5d5 {grid-area: w5d5;}
+#w5d6 {grid-area: w5d6;}
+#w5d7 {grid-area: w5d7;}
+
