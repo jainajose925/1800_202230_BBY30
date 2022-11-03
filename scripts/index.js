@@ -12,11 +12,22 @@ let firstDay = new Date(year, month, 1);
 
 let currWeekDay = (dayNum + firstDay.getDay() - 1)%7;
 
-console.log(week[currWeekDay]);
-
 let select = "col" + (currWeekDay+1);
 
-console.log(select);
+//CHANGE TO GREEN IF ATE BREAKFAST
+const eat = document.getElementById("ate");
 
-document.getElementById(select).style.backgroundColor = "black";
+eat.addEventListener("click", breakfastTrue);
 
+function breakfastTrue() {
+    document.getElementById(select).style.backgroundColor = "#7ffaa0";
+}
+
+//CHANGE TO RED IF DIDN'T EAT BREAKFAST
+const noeat = document.getElementById("noeat");
+
+noeat.addEventListener("click", breakfastFalse);
+
+function breakfastFalse() {
+    document.getElementById(select).style.backgroundColor = "#f78691";
+}
