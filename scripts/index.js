@@ -1,7 +1,25 @@
-const date = new Date();
+function insertName() {
+    firebase.auth().onAuthStateChanged(user => {
+        // Check if a user is signed in:
+        if (user) {
+            // Do something for the currently logged-in user here: 
+            console.log(user.uid);
+            console.log(user.displayName);
+            user_Name = user.displayName;
 
-const week = ["Sunday", "Monday", "Tuesday",
-"Wednesday", "Thursday", "Friday", "Saturday"];
+            //method #1:  insert with html only
+            //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
+            //method #2:  insert using jquery
+            $("#name-goes-here").text(user_Name); //using jquery
+
+        } else {
+            // No user is signed in.
+        }
+    });
+}
+insertName();
+
+const date = new Date();
 
 let day = date.getDay();
 let dayNum = date.getDate();
@@ -14,18 +32,23 @@ let currWeekDay = (dayNum + firstDay.getDay() - 1)%7;
 
 let select = "col" + (currWeekDay+1);
 
-//CHANGE TO GREEN IF ATE BREAKFAST
 const eat = document.getElementById("ate");
+const noeat = document.getElementById("noeat");
+
+function breakfastLog {
+    db.collections("")
+}
+
+
+//CHANGE TO GREEN IF ATE BREAKFAST
+
 
 eat.addEventListener("click", breakfastTrue);
-
 function breakfastTrue() {
     document.getElementById(select).style.backgroundColor = "#7ffaa0";
 }
 
 //CHANGE TO RED IF DIDN'T EAT BREAKFAST
-const noeat = document.getElementById("noeat");
-
 noeat.addEventListener("click", breakfastFalse);
 
 function breakfastFalse() {
