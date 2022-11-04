@@ -16,6 +16,8 @@ function insertName() {
 }
 insertName();
 
+
+//GET DATE
 const date = new Date();
 
 let day = date.getDay();
@@ -29,8 +31,20 @@ let currWeekDay = (dayNum + firstDay.getDay() - 1)%7;
 
 let select = "col" + (currWeekDay+1);
 
+const months = ["january", "febuary", "march",
+"april", "may", "june", "july", "august",
+"september", "october", "november", "december"];
+
+let currentDate = months[month] + "" + dayNum + "_" + year;
+console.log(currentDate);
+
+
+//LOG BREAKFAST
 const eat = document.getElementById("ate");
 const noeat = document.getElementById("noeat");
+
+
+
 /*
 function breakfastLog {
     
@@ -38,10 +52,10 @@ function breakfastLog {
 */
 
 //CHANGE TO GREEN IF ATE BREAKFAST
+eat.addEventListener("click", breakfastTrue(currentDate));
 
-
-eat.addEventListener("click", breakfastTrue);
-function breakfastTrue() {
+function breakfastTrue(today) {
+    var dateRef = db.collection("history");
     document.getElementById(select).style.backgroundColor = "#7ffaa0";
 }
 
@@ -52,13 +66,12 @@ function breakfastFalse() {
     document.getElementById(select).style.backgroundColor = "#f78691";
 }
 
-
 function getUserID() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
-            console.log(user.uid);
-            
+            let id = user.uid;
+            return id;
 
         } else {
             // No user is signed in.
