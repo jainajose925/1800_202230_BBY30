@@ -7,9 +7,6 @@ function insertName() {
             console.log(user.displayName);
             user_Name = user.displayName;
 
-            //method #1:  insert with html only
-            //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-            //method #2:  insert using jquery
             $("#name-goes-here").text(user_Name); //using jquery
 
         } else {
@@ -34,11 +31,11 @@ let select = "col" + (currWeekDay+1);
 
 const eat = document.getElementById("ate");
 const noeat = document.getElementById("noeat");
-
+/*
 function breakfastLog {
-    db.collections("")
+    
 }
-
+*/
 
 //CHANGE TO GREEN IF ATE BREAKFAST
 
@@ -53,4 +50,18 @@ noeat.addEventListener("click", breakfastFalse);
 
 function breakfastFalse() {
     document.getElementById(select).style.backgroundColor = "#f78691";
+}
+
+
+function getUserID() {
+    firebase.auth().onAuthStateChanged(user => {
+        // Check if a user is signed in:
+        if (user) {
+            console.log(user.uid);
+            
+
+        } else {
+            // No user is signed in.
+        }
+    });
 }
