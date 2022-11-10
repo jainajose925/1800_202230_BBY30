@@ -4,31 +4,22 @@ function writeRecipes() {
 
     recipesRef.add({
         code: "GNG1",
-        name: "Toast and Carrots1",    //replace with your own city?
-        city: "Burnaby",
-        province: "BC",
-        level: "easy",
-        length: "10",
+        name: "Microwave Egg Oatmeal",    //replace with your own city?
+        time: "5",
         details: "Breakfast Description",
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
     recipesRef.add({
         code: "GNG1",
-        name: "Toast and Carrots2",    //replace with your own city?
-        city: "Anmore",
-        province: "BC",
-        level: "moderate",
-        length: "10.5",
+        name: "Protein Breakfast Sandwich",    //replace with your own city?
+        time: "5",
         details: "Breakfast Description",
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
     recipesRef.add({
         code: "GNG1",
-        name: "Toast and Carrots3",    //replace with your own city?
-        city: "North Vancouver",
-        province: "BC",
-        level: "hard",
-        length: "8.2",
+        name: "Turmeric Tofu Scramble",    //replace with your own city?
+        time: "7",
         details: "Breakfast Description",
         last_updated: firebase.firestore.Timestamp.fromDate(new Date("March 10, 2022"))
     });
