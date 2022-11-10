@@ -16,7 +16,7 @@
     height: 200px;
     display: grid;
     grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-    grid-template-rows: 25% 15% 80%;
+    grid-template-rows: 25% 15% 70%;
     grid-template-areas: 
     "title title title title title title title"
     "sun mon tue wed thu fri sat"
@@ -34,6 +34,7 @@
 }
 
 #question {
+    font-size: large;
     margin: auto;
     background-color: #9d7a46;
     border: solid;
@@ -66,6 +67,18 @@
     width: 100%; 
     padding: 3px;
 }
+
+#undo {
+    display: none;
+    margin: auto;
+    margin-top: 40px;
+    width: 80%;
+    height: 40px;
+    background-color: #f78691;
+    color: #66060f;
+    font-size: large;
+}
+
 
 #sun {grid-area: sun;background-color: lightgray;text-align: center;}
 #mon {grid-area: mon;background-color: lightgray;text-align: center;}
