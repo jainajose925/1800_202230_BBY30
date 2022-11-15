@@ -3,21 +3,21 @@ function writeRecipes() {
     var recipesRef = db.collection("recipes");
 
     recipesRef.add({
-        code: "GNG1",
+        code: "GG01",
         name: "Microwave Egg Oatmeal",    //replace with your own city?
         time: "5",
         details: "Breakfast Description",
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
     recipesRef.add({
-        code: "GNG1",
+        code: "GG01",
         name: "Protein Breakfast Sandwich",    //replace with your own city?
         time: "5",
         details: "Breakfast Description",
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
     recipesRef.add({
-        code: "GNG1",
+        code: "GG01",
         name: "Turmeric Tofu Scramble",    //replace with your own city?
         time: "7",
         details: "Breakfast Description",
@@ -26,6 +26,7 @@ function writeRecipes() {
 }
 
 function displayCards(collection) {
+    console.log(collection.id)
     let cardTemplate = document.getElementById("recipeCardTemplate");
 
     db.collection(collection).get()
@@ -40,7 +41,7 @@ function displayCards(collection) {
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('.card-text').innerHTML = details;
-                newcard.querySelector('.card-image').src = `./images/${recipeID}.jpg`; //Example: NV01.jpg
+                newcard.querySelector('.card-image').src = `./images/${recipeID}`; //Example: NV01.jpg
 
                 //give unique ids to all elements for future use
                 // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
