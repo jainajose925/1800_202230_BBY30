@@ -1,4 +1,7 @@
 //INSERT NAME
+
+
+
 function insertName() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -196,3 +199,38 @@ noeat.addEventListener("click", function() {
 eat.addEventListener("click", function() {
     breakfastTrue()
 });
+
+
+// //logout
+// const logoutButton = document.querySelector('.btn logout')
+// logoutButton.addEventListener('click', ()=>{
+// //     signOut(auth)
+// //     .then(() =>{
+// //       window.location.href = "login.html";
+// //       console.log('Sign-out successful')
+//     })
+// //     .catch((error) => {
+// //       console.log('error')
+// //     })
+// // })
+const logoutButton = document.querySelector('.logout')
+logoutButton.addEventListener('click', ()=>{
+    console.log("logging out user");
+    firebase.auth().signOut().then(() => {
+        // Sign-out successful.
+        window.location.href = "login.html";
+      }).catch((error) => {
+        // An error happened.
+      });
+  })
+
+
+function logout() {
+  console.log("logging out user");
+  firebase.auth().signOut().then(() => {
+      // Sign-out successful.
+      window.location.href = "login.html";
+    }).catch((error) => {
+      // An error happened.
+    });
+}
