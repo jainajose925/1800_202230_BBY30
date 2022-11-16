@@ -80,7 +80,6 @@ function weekLog() {
                   //KEEP LIGHT GRAY
                   document.getElementById(columnSelect).style.backgroundColor = "lightgray";
                 }
-                console.log(columnSelect + "\n");
               }
           });
         });
@@ -97,7 +96,7 @@ function undoLog(){
     document.getElementById("breakfastButtons").style.display = "flex";
     document.getElementById("question").style.display = "block";
     document.getElementById("undo").style.display = "none";
-    document.getElementById("main_body").style.gridTemplateRows = "50% 6% 60%";
+    document.getElementById("main_body").style.gridTemplateRows = "50% 8% 50%";
     document.getElementById(select).style.backgroundColor = "lightgray";
 
     firebase.auth().onAuthStateChanged(async (user) => {
@@ -119,16 +118,16 @@ function undoLog(){
     weekLog();
 }
 
-//GET RID OF BUTTONS IF USER HAS DONE DAILY LOG
+//GET RID OF BUTTONS IF USER HAS DONE TODAY'S LOG
 function logDone() {
     document.getElementById("breakfastButtons").style.display = "none";
     document.getElementById("question").style.display = "none";
-    document.getElementById("main_body").style.gridTemplateRows = "60% 6% 70%";
+    document.getElementById("main_body").style.gridTemplateRows = "50% 8% 50%";
     document.getElementById("undo").style.display = "block";
     console.log("buttons have been removed");
 }
 
-//CHANGE TO GREEN IF ATE BREAKFAST
+//ADD DATA IF ATE BREAKFAST
 function breakfastTrue() {
     console.log("breakfast selected");
 
@@ -152,7 +151,7 @@ function breakfastTrue() {
       });
 }
 
-//CHANGE TO RED IF DIDN'T EAT BREAKFAST
+//ADD DATA IF DIDN'T EAT BREAKFAST
 function breakfastFalse() {
     console.log("no breakfast today :(");
 
