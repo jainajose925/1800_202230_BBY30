@@ -41,13 +41,11 @@ function writeRecipes() {
 }
 
 function populateCardsDynamically() {
-    let hikeCardTemplate = document.getElementById("recipeCardTemplate");  //card template
-    let hikeCardGroup = document.getElementById("recipeCardGroup");   //where to append card
+    let recipeCardTemplate = document.getElementById("recipeCardTemplate");  //card template
+    let recipeCardGroup = document.getElementById("recipeCardGroup");   //where to append card
   
-    //doublecheck: is your Firestore collection called "hikes" or "Hikes"?
     db.collection("recipes")
-    // .where("city","==","Burnaby")
-    // .orderBy("length")
+
     // .orderBy("last_updated")            //NEW LINE;  what do you want to sort by?
     // .limit(2)                       //NEW LINE:  how many do you want to get?
     .get()
@@ -59,6 +57,7 @@ function populateCardsDynamically() {
           let testRecipeCard = recipeCardTemplate.content.cloneNode(true);
           testRecipeCard.querySelector('.card-title').innerHTML = recipeName;
           testRecipeCard.querySelector('.card-details').innerHTML = recipeDetails;
+          
           testRecipeCard.querySelector('a').onclick = () => setRecipeData(recipeID);
   
           //next 2 lines are new for demo#11
