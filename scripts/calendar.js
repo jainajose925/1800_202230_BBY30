@@ -4,9 +4,6 @@ const months = ["January", "Febuary", "March",
 "April", "May", "June", "July", "August",
 "September", "October", "November", "December"];
 
-const week = ["Sunday", "Monday", "Tuesday",
-"Wednesday", "Thursday", "Friday", "Saturday"];
-
 let day = date.getDay();
 let dayNum = date.getDate();
 let month = date.getMonth();
@@ -20,9 +17,6 @@ let currWeekDay = (dayNum + firstDay.getDay() - 1)%7;
 
 let select = "w" + (parseInt((dayNum/7)+1)) + "d" + (currWeekDay + 1);
 
-//CREATES DOCUMENT NAME FOR CURRENT DAY
-var currentDate = day + "" + months[month] + "" + dayNum + "_" + year;
-
 document.getElementById("currentMonth").innerHTML = currMon;
 
 //GET NUMBER OF DAYS IN A MONTH
@@ -31,8 +25,7 @@ function getDaysInMonth(year, month) {
   }
 
 var maxDate = getDaysInMonth(year, month);
-console.log(maxDate)
-;
+console.log(maxDate);
 
 //CHANGE COLUMN COLOURS DEPENDING ON LOG
 function monthLog() {
