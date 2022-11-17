@@ -10,6 +10,16 @@
 #grass {background-color: #abf56e;grid-area: grass;}
 #ground {background-color: #6d412b;grid-area: ground;}
 
+
+#img{
+    margin:auto;
+    margin-top: 28px;
+    display: block;
+    height: 225px;
+    width: auto;
+}
+
+
 .week {
     margin: auto;
     width: 80%;
