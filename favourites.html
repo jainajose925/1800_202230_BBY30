@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Breakfast Recipes</title>
-    <meta name="recipes template" content="RecipesBrowser">
+    <title>Favourites</title>
+    <meta name="favourites" content="my favourites">
 
     <!------------------------>
     <!-- Required meta tags -->
@@ -44,38 +44,31 @@
     <!------------------------------>
 
     <!-- the body of your page goes here -->
+
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
 
-    <div class="container-fluid bg-light text-dark p-5">
-        <div class="container bg-light p-5">
-            <h1 class="display-4">Breakfast Recipes</h1>
-        </div>
-    </div>
-
     <div class="container">
-        <h1>Grab N' Go</h1>
+        <h1>My Favourite Recipes</h1>
         <!-- Here is container for cards  -->
         <div class="container">
             <div id="recipeCardGroup" class="row row-cols-auto">
             </div>
         </div>
-    </div> 
+    </div>
 
     <!-- Templates for general use, not displayed -->
-
-    <template id="recipeCardTemplate">
-        <div class="card">
-            <!-- <img class="img"> -->
-            <img class="card-image card-img-top" src="..." alt="...">
+    <template id="CardTemplate">
+        <div class="card py-2 mx-2" style="width: 18rem;">
+            <img class="card-image card-img-top" src=" ..." alt="...">
             <div class="card-body">
-                <h5 class="card-title">Recipe Title</h5>
+                <h5 class="card-title">Recipe title</h5>
                 <p class="card-details">placeholder</p>
-                <a href="eachRecipe.html" style="float: right" class="btn btn-primary card-href details">Details</a>
-                <i class="material-icons">bookmark_border</i>
+                <a href="eachRecipe.html" style="float: left" class="btn btn-primary card-href details">Details</a>
             </div>
         </div>
     </template>
+
 
     <!-- our own footer goes here-->
 
@@ -84,7 +77,8 @@
     <!---------------------------------------------->
     <script src="./scripts/FirestoreAPI_TEAM30.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/recipes.js"></script>
+    <script src="./scripts/favourites.js"></script>
+
 
     <!-- <script src="./scripts/script.js"></script> -->
 </body>
