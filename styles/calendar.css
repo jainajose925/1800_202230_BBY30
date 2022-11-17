@@ -12,7 +12,8 @@ body {
 }
 
 #sky {
-    background-color: lightblue;
+    background-image: url(/images/26302.jpg);
+    background-size: cover;
     grid-area: sky;
 }
 

@@ -6,7 +6,7 @@
     grid-template-areas: "sky" "grass" "ground";
 }
 
-#sky {background-color: lightblue;grid-area: sky;}
+#sky {background-image: url(/images/26302.jpg); background-size:cover;grid-area: sky;}
 #grass {background-color: #abf56e;grid-area: grass;}
 #ground {background-color: #6d412b;grid-area: ground;}
 

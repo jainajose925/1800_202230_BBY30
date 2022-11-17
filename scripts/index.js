@@ -1,7 +1,4 @@
 //INSERT NAME
-
-
-
 function insertName() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -91,7 +88,6 @@ function weekLog() {
         // ...
       }
     });
-
 }
 
 //UNDO BUTTON FUNCTION
@@ -200,18 +196,7 @@ eat.addEventListener("click", function() {
 });
 
 
-// //logout
-// const logoutButton = document.querySelector('.btn logout')
-// logoutButton.addEventListener('click', ()=>{
-// //     signOut(auth)
-// //     .then(() =>{
-// //       window.location.href = "login.html";
-// //       console.log('Sign-out successful')
-//     })
-// //     .catch((error) => {
-// //       console.log('error')
-// //     })
-// // })
+//LOGOUT
 const logoutButton = document.querySelector('.logout')
 logoutButton.addEventListener('click', ()=>{
     console.log("logging out user");
