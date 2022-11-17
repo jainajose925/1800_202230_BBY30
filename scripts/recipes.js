@@ -1,9 +1,24 @@
+var currentUser;
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    currentUser = db.collection("users").doc(user.uid);   //global
+    console.log(currentUser);
+
+    // the following functions are always called when someone is logged in
+    populateCardsDynamically();
+  } else {
+    // No user is signed in.
+    console.log("No user is signed in");
+    window.location.href = "login.html";
+  }
+});
+
 function writeRecipes() {
     //define a variable for the collection you want to create in Firestore to populate data
     var recipesRef = db.collection("recipes");
 
     recipesRef.add({
-        code: "GG01",
+        code: "R01",
         name: "Microwave Egg Oatmeal",    //replace with your own city?
         time: "5",
         details: "Breakfast Description",
@@ -17,7 +32,7 @@ function writeRecipes() {
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
     recipesRef.add({
-        code: "GG01",
+        code: "PB01",
         name: "Turmeric Tofu Scramble",    //replace with your own city?
         time: "7",
         details: "Breakfast Description",
@@ -25,34 +40,62 @@ function writeRecipes() {
     });
 }
 
-function displayCards(collection) {
-    console.log(collection.id)
-    let cardTemplate = document.getElementById("recipeCardTemplate");
-
-    db.collection(collection).get()
-        .then(snap => {
-            //var i = 1;  //if you want to use commented out section
-            snap.forEach(doc => { //iterate thru each doc
-                var title = doc.data().name;        // get value of the "name" key
-                var details = doc.data().details;   // get value of the "details" key
-								var recipeID = doc.data().code;    //get unique ID to each hike to be used for fetching right image
-                let newcard = cardTemplate.content.cloneNode(true);
-
-                //update title and text and image
-                newcard.querySelector('.card-title').innerHTML = title;
-                newcard.querySelector('.card-text').innerHTML = details;
-                newcard.querySelector('.card-image').src = `./images/${recipeID}`; //Example: NV01.jpg
-
-                //give unique ids to all elements for future use
-                // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-                // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-                // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
-
-                //attach to gallery
-                document.getElementById(collection + "-go-here").appendChild(newcard);
-                //i++;   //if you want to use commented out section
-            })
+function populateCardsDynamically() {
+    let hikeCardTemplate = document.getElementById("recipeCardTemplate");  //card template
+    let hikeCardGroup = document.getElementById("recipeCardGroup");   //where to append card
+  
+    //doublecheck: is your Firestore collection called "hikes" or "Hikes"?
+    db.collection("recipes")
+    // .where("city","==","Burnaby")
+    // .orderBy("length")
+    // .orderBy("last_updated")            //NEW LINE;  what do you want to sort by?
+    // .limit(2)                       //NEW LINE:  how many do you want to get?
+    .get()
+      .then(allRecipes => {
+        allRecipes.forEach(doc => {
+          var recipeName = doc.data().name; //gets the name field
+          var recipeID = doc.data().code; //gets the unique ID field
+          var recipeDetails = doc.data().details; //gets the length field
+          let testRecipeCard = recipeCardTemplate.content.cloneNode(true);
+          testRecipeCard.querySelector('.card-title').innerHTML = recipeName;
+          testRecipeCard.querySelector('.card-details').innerHTML = recipeDetails;
+          testRecipeCard.querySelector('a').onclick = () => setRecipeData(recipeID);
+  
+          //next 2 lines are new for demo#11
+          //this line sets the id attribute for the <i> tag in the format of "save-hikdID" 
+          //so later we know which hike to bookmark based on which hike was clicked
+          testRecipeCard.querySelector('i').id = 'save-' + recipeID;
+          // this line will call a function to save the hikes to the user's document             
+          testRecipeCard.querySelector('i').onclick = () => saveBookmark(recipeID);
+  
+          testRecipeCard.querySelector('img').src = `./images/${recipeID}.jpg`;
+          testRecipeCard.querySelector('.details').href = "eachRecipe.html?recipeName="+recipeName +"&id=" + recipeID;
+          recipeCardGroup.appendChild(testRecipeCard);
         })
-}
+      })
+  }
+  populateCardsDynamically();
 
-displayCards("recipes");
+  function setRecipeData(id) {
+    localStorage.setItem('recipeID', id);
+  }
+  
+  //-----------------------------------------------------------------------------
+  // This function is called whenever the user clicks on the "bookmark" icon.
+  // It adds the hike to the "bookmarks" array
+  // Then it will change the bookmark icon from the hollow to the solid version. 
+  //-----------------------------------------------------------------------------
+  function saveBookmark(recipeID) {
+    currentUser.set({
+      bookmarks: firebase.firestore.FieldValue.arrayUnion(recipeID)
+    }, {
+      merge: true
+    })
+      .then(function () {
+        console.log("bookmark has been saved for: " + currentUser);
+        var iconID = 'save-' + recipeID;
+        //console.log(iconID);
+        //this is to change the icon of the hike that was saved to "filled"
+        document.getElementById(iconID).innerText = 'bookmark';
+      });
+  }
