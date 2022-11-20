@@ -67,14 +67,11 @@ function weekLog() {
               //GET COLUMN ID
               columnSelect = "col" + (parseInt(jsDate.getDay())+1);
               if (jsDate >= checkSunday()) {
-                console.log(jsDate);
                 if (doc.get("breakfast") == true) {
                   //CHANGE TO GREEN IF TRUE
-                  console.log("true");
                   document.getElementById(columnSelect).style.backgroundColor = "#7ffaa0";
                 } else if (doc.get("breakfast") == false) {
                   //CHANGE TO RED IF FALSE
-                  console.log("false");
                   document.getElementById(columnSelect).style.backgroundColor = "#f78691";
                 } else {
                   //KEEP LIGHT GRAY
@@ -82,6 +79,8 @@ function weekLog() {
                 }
               }
           });
+          getScore();
+
         });
       } else {
         // User is signed out
@@ -92,29 +91,48 @@ function weekLog() {
 
 //UNDO BUTTON FUNCTION
 function undoLog(){
-    document.getElementById("breakfastButtons").style.display = "flex";
-    document.getElementById("question").style.display = "block";
-    document.getElementById("undo").style.display = "none";
-    document.getElementById("main_body").style.gridTemplateRows = "50% 8% 50%";
-    document.getElementById(select).style.backgroundColor = "lightgray";
-
     firebase.auth().onAuthStateChanged(async (user) => {
       if (user) {
         var uid = user.uid;
-        var docHistoryRef = db.collection('users/' + uid + '/history').doc(currentDate);
+        var docHistoryRef = await db.collection('users/' + uid + '/history').doc(currentDate);
 
-      await docHistoryRef.delete().then(() => {
-          console.log("Document successfully deleted!");
+        await docHistoryRef.get().then(async (doc) => {
+          if (doc.exists) {
+            console.log(doc.get("breakfast"));
+            if (await doc.get("breakfast") == true) {
+              console.log("hi");
+              undoScore();
+            }
+          } else {
+              // doc.data() will be undefined in this case
+              console.log("No such document!");
+          }
       }).catch((error) => {
-          console.error("Error removing document: ", error);
+          console.log("Error getting document:", error);
       });
+
+       await docHistoryRef.delete().then(() => {
+       }).catch((error) => {
+           console.error("Error removing document: ", error);
+       });
 
       } else {
         // User is signed out
         // ...
       }
+
+      weekLog();
+
+      document.getElementById("breakfastButtons").style.display = "flex";
+      document.getElementById("question").style.display = "block";
+      document.getElementById("undo").style.display = "none";
+      document.getElementById("main_body").style.gridTemplateRows = "50% 8% 50%";
+      document.getElementById(select).style.backgroundColor = "lightgray";
+
     });
-    weekLog();
+
+    
+
 }
 
 //GET RID OF BUTTONS IF USER HAS DONE TODAY'S LOG
@@ -140,6 +158,8 @@ function breakfastTrue() {
             breakfast: true,
             date: firebase.firestore.FieldValue.serverTimestamp()  
         });
+
+        addScore();
 
         logDone();
         weekLog();

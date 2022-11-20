@@ -96,7 +96,7 @@
       <h1 class="display-4">Good morning, <span id="name-goes-here"></span>!</h1>
       <div class="overflow-hidden" style="max-height: 30vh;">
         <div class="container px-5">
-          <img id ="img" src="images/Flower2.png" class=" rounded-3  mb-4" alt="Example image" width="374" height="720">
+          <img id ="img" src="" class=" rounded-3  mb-4" alt="Example image" width="374" height="720">
         </div>
       </div>
     </div>
@@ -104,10 +104,10 @@
   <!------------------------------------->
 
   <div id = "grass">
-    <h5>Your Stats This Month:<span id ="stat-goes-here"></span></h5>
+    <h5>Your Stats This Month: <span id ="stat-goes-here"></span></h5>
     <div id="bprogress" class="progress">
-      <div class="progress-bar bg-success" role="progressbar" aria-label="Segment one" style="width: 50%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-      <div class="progress-bar bg-danger" role="progressbar" aria-label="Segment two" style="width: 50%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+      <div id="breakfastTrue" class="progress-bar bg-success" role="progressbar" aria-label="Segment one"  aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+      <div id="breakfastFalse" class="progress-bar bg-danger" role="progressbar" aria-label="Segment two"  aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
 
   </div>
@@ -127,13 +127,13 @@
       <div class="week">
         <h2 id="weektitle">Your Week</h2>
 
-          <div id="sun"><h5>SUN</h5></div>
-          <div id="mon"><h5>MON</h5></div>
-          <div id="tue"><h5>TUE</h5></div>
-          <div id="wed"><h5>WED</h5></div>
-          <div id="thu"><h5>THU</h5></div>
-          <div id="fri"><h5>FRI</h5></div>
-          <div id="sat"><h5>SAT</h5></div>
+          <div id="sun" class = "dayTitle"><h5>SU</h5></div>
+          <div id="mon" class = "dayTitle"><h5>M</h5></div>
+          <div id="tue" class = "dayTitle"><h5>TU</h5></div>
+          <div id="wed" class = "dayTitle"><h5>W</h5></div>
+          <div id="thu" class = "dayTitle"><h5>TH</h5></div>
+          <div id="fri" class = "dayTitle"><h5>F</h5></div>
+          <div id="sat" class = "dayTitle"><h5>SA</h5></div>
 
         <div id="col1"></div>
         <div id="col2"></div>
@@ -160,8 +160,9 @@
   <!-- Link to scripts of your own -->
   <script src="./scripts/FirestoreAPI_TEAM30.js"></script>
   <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/index.js"></script>
   <script src="./scripts/score.js"></script>
+  <script src="./scripts/index.js"></script>
+  
   
 
 </body>

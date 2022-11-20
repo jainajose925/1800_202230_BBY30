@@ -27,7 +27,7 @@ function getDaysInMonth(year, month) {
 var maxDate = getDaysInMonth(year, month);
 console.log(maxDate);
 
-//CHANGE COLUMN COLOURS DEPENDING ON LOG
+//CHANGE GRID COLOURS DEPENDING ON LOG
 function monthLog() {
     firebase.auth().onAuthStateChanged((user) => {
         if (user) {
@@ -74,5 +74,5 @@ function monthLog() {
         }
       });
   }
-
   monthLog();
+  getScore();
