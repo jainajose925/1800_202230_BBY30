@@ -1,0 +1,37 @@
+#all{
+    background-image: url(/images/26302.jpg);
+    background-position: center;
+
+}
+#container{
+
+    display: grid;
+
+
+    grid-template-columns: .5fr .5fr;
+    grid-template-rows: .2fr .9fr .9fr 1fr;
+    grid-template-areas: 
+    "h1  h1"
+    "c1 c2"
+    "c5 c4"
+    ;
+}
+#head{
+    padding-top: 50pt;
+    padding-left: 35pt;
+    grid-area: h1;
+}
+
+.card1{
+    grid-area: c1;
+}
+
+.card2{
+    grid-area: c2;
+}
+.card4{
+    grid-area: c4;
+}
+.card5{
+    grid-area: c5;
+}

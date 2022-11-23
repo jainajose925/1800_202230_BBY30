@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Botanical Breakfast</title>
+  <meta name="comp1800 template" content="My 1800 App">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- Boostrap Library JS CDN  go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+    <!--FIREBASE-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+  <!-- Other libraries go here -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="./styles/avatar.css">
+
+</head>
+
+<body id="all">
+
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
+<div id="container">
+
+
+    <h2 id="head">Select your Buddy!</h2>
+
+    <div class="card1" style="width: 18rem;">
+        <img class="card-img-top" src="/images/avatars/banana0.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Benny the Banana</h5>
+          <p class="card-text"></p>
+          <a href="#" id="btn1" class="btn btn-primary">Pick Me!</a>
+        </div>
+      </div>
+
+      <div class="card2" style="width: 18rem;">
+        <img class="card-img-top" src="images/avatars/cactus0.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Carl the Cactus</h5>
+          <p class="card-text"></p>
+          <a href="#" id="btn2" class="btn btn-primary">Pick Me!</a>
+        </div>
+      </div>
+
+
+
+      <div class="card4" style="width: 18rem;">
+        <img class="card-img-top" src="/images/avatars/egg0.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Reggie the Egg</h5>
+          <p class="card-text"></p>
+          <a href="#" id="btn3" class="btn btn-primary">Pick Me!</a>
+        </div>
+      </div>
+
+      <div class="card5" style="width: 18rem;">
+        <img class="card-img-top" src="/images/avatars/flower0.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Sally the SunFlower</h5>
+          <p class="card-text"></p>
+          <a href="#" id="btn4" class="btn btn-primary">Pick Me!</a>
+        </div>
+      </div>
+
+
+
+
+
+</div>
+
+
+  
+
+
+ 
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+
+  <!-- Link to scripts of your own -->
+  <script src="./scripts/FirestoreAPI_TEAM30.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/avatar.js"></script>
+  
+  
+
+</body>
+
+</html>
