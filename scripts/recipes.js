@@ -13,30 +13,30 @@ firebase.auth().onAuthStateChanged(user => {
   }
 });
 
-function writeRecipes() {
+function writeRecipes1() {
     //define a variable for the collection you want to create in Firestore to populate data
     var recipesRef = db.collection("recipes");
 
     recipesRef.add({
         code: "R01",
         name: "Microwave Egg Oatmeal",    //replace with your own city?
-        time: "5",
+        time: "5 mins",
         details: "Breakfast Description",
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
     recipesRef.add({
         code: "GG01",
         name: "Protein Breakfast Sandwich",    //replace with your own city?
-        time: "5",
+        time: "5 mins",
         details: "Breakfast Description",
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
     recipesRef.add({
         code: "PB01",
         name: "Turmeric Tofu Scramble",    //replace with your own city?
-        time: "7",
+        time: "7 mins",
         details: "Breakfast Description",
-        last_updated: firebase.firestore.Timestamp.fromDate(new Date("March 10, 2022"))
+        last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
 }
 
@@ -54,10 +54,12 @@ function populateCardsDynamically() {
           var recipeName = doc.data().name; //gets the name field
           var recipeID = doc.data().code; //gets the unique ID field
           var recipeDetails = doc.data().details; //gets the length field
+          var recipeTime = doc.data().time;
           let testRecipeCard = recipeCardTemplate.content.cloneNode(true);
           testRecipeCard.querySelector('.card-title').innerHTML = recipeName;
           testRecipeCard.querySelector('.card-details').innerHTML = recipeDetails;
-          
+          testRecipeCard.querySelector('.card-time').innerHTML = recipeTime;
+
           testRecipeCard.querySelector('a').onclick = () => setRecipeData(recipeID);
   
           //next 2 lines are new for demo#11
@@ -68,7 +70,7 @@ function populateCardsDynamically() {
           testRecipeCard.querySelector('i').onclick = () => saveBookmark(recipeID);
   
           testRecipeCard.querySelector('img').src = `./images/${recipeID}.jpg`;
-          testRecipeCard.querySelector('.details').href = "eachRecipe.html?recipeName="+recipeName +"&id=" + recipeID;
+          testRecipeCard.querySelector('.details').href = "proteinBreakfastSandwich.html?recipeName="+recipeName +"&id=" + recipeID;
           recipeCardGroup.appendChild(testRecipeCard);
         })
       })

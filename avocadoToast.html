@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Breakfast Recipes</title>
-    <meta name="recipes template" content="RecipesBrowser">
+    <title>Avocado Toast</title>
+    <meta name="recipes" content="each Recipe">
 
     <!------------------------>
     <!-- Required meta tags -->
@@ -44,39 +44,59 @@
     <!------------------------------>
 
     <!-- the body of your page goes here -->
+
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
 
     <div class="container-fluid bg-light text-dark p-5">
         <div class="container bg-light p-5">
-            <h1 class="display-4">Breakfast Recipes</h1>
+            <h2>How to make Avocado Toast</h2>
+            <div id="details-go-here"></div>
         </div>
     </div>
 
-    <div class="container">
-        <h1>High Protein</h1>
-        <!-- Here is container for cards  -->
-        <div class="container">
-            <div id="recipeCardGroup" class="row row-cols-auto">
-            </div>
-        </div>
-    </div> 
-
     <!-- Templates for general use, not displayed -->
+    <div class="b-example-divider"></div>
+    <div class="container my-5">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-4 fw-bold lh-1">Ingredients</h1>
+                <ul class="lead">
+                    <li>1 cup whole milk ricotta cheese or Whipped Ricotta</li>
+                    <li>Kosher salt</li>
+                    <li>Fresh ground pepper</li>
+                    <li>Slices of bread</li>
+                    <li>Ripe avocado</li>
+                    <li>Radishes</li>
+                    <li>Garlic salt</li>
+                </ul>
 
-    <template id="recipeCardTemplate">
-        <div class="card">
-            <!-- <img class="img"> -->
-            <img class="card-image card-img-top" src="..." alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Recipe Title</h5>
-                <p class="card-details">placeholder</p>
-                <p class="card-time">placeholder</p>
-                <a href="proteinBreakfastSandwich.html" style="float: right" class="btn btn-primary card-href details">Details</a>
-                <i class="material-icons">bookmark_border</i>
+            </div>
+            <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                <img class="rounded-lg-3" src="./images/AT.jpeg" alt="" height="100%" width="100%">
             </div>
         </div>
-    </template>
+    </div>
+
+
+    <div class="container my-5">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-4 fw-bold lh-1">Instructions</h1>
+                <ol class="lead">
+                    <li>Stir together the ricotta with ¼ teaspoon kosher salt and several grinds of fresh ground pepper;
+                        taste and adjust seasoning as desired. Or, make the Whipped Ricotta: place 16 ounces whole milk
+                        ricotta, 3 tablespoons milk and 1 tablespoon olive oil in a bowl and whisk with a whisk for
+                        about 2 minutes until light and fluffy.</li>
+                    <li>Toast the bread.</li>
+                    <li>Spread ricotta on the toast. </li>
+                    <li>Top the toast with sliced radishes, drizzle of olive oil, and a small pinch salt and fresh
+                        ground pepper.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
 
     <!-- our own footer goes here-->
 
@@ -85,7 +105,8 @@
     <!---------------------------------------------->
     <script src="./scripts/FirestoreAPI_TEAM30.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/recipes.js"></script>
+    <script src="./scripts/eachRecipe.js"></script>
+
 
     <!-- <script src="./scripts/script.js"></script> -->
 </body>
