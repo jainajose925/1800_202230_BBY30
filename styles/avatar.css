@@ -3,14 +3,13 @@
     background-position: center;
     height: 100%;
     width: 100%;
+    max-width: 100%;
 }
 #container{
-
     display: grid;
-
-
-    grid-template-columns: 50% 50%;
-    grid-template-rows: .2fr .9fr .9fr 1fr;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 10% 40% 40%;
+    grid-row-gap: 4%;
     grid-template-areas: 
     "h1  h1"
     "c1 c2"
@@ -18,27 +17,48 @@
     ;
 }
 #head{
-    padding-top: 50pt;
+    margin-top: 5%;
     padding-left: 35pt;
     grid-area: h1;
 }
 
-img {
-    height: 200px;
+.card2 > img {
+    height: 160px;
+    width: auto;
+}
+
+.card1 > img {
+    height: 160px;
+    width: auto;
+    margin: auto;
+    margin-top: 3%;
+}
+
+.card5 > img {
+    height: 190px;
+    width: auto
+}
+
+.card4 > img {
+    height: 165px;
     width: auto;
 }
 
 .card1{
+    margin-left: 9%;
     grid-area: c1;
 }
 
 .card2{
+    margin-right: 0;
     grid-area: c2;
 }
 .card4{
+    margin-right: 0;
     grid-area: c4;
 }
 .card5{
+    margin-left: 9%;
     grid-area: c5;
 }
 
