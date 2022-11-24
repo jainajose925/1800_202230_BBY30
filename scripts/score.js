@@ -10,13 +10,30 @@ function getScore() {
         var score;
         var stat;
 
+        //*********DELETE ALL DOCUMENTS IF MONTH IS CHANGED************
+
         await userRef.get().then(async (doc) => {
           if (doc.exists) {
               //GET BREAKFAST COUNT
               stat = await doc.get('bCount')
-              //GET PERCENTAGE
-              score = Math.round((stat/dayN)*100) + '%';
-              falseScore = (100 - Math.round((stat/dayN)*100)) + '%';
+
+              if (isNaN(stat)) {
+                $("#stat-goes-here").text("Log your first day!");
+              } else if ((dayN == 1 && stat > 1)) {
+                await userRef.set({
+                    bCount: 0
+                });
+                stat = await doc.get('bCount');
+                $("#stat-goes-here").text("Log your first day of the month!");
+              } else {
+                //GET PERCENTAGE
+                score = Math.round((stat/dayN)*100) + '%';
+                falseScore = (100 - Math.round((stat/dayN)*100)) + '%';
+
+                document.getElementById("breakfastTrue").style.width = score;
+                document.getElementById("breakfastFalse").style.width = falseScore;
+                 $("#stat-goes-here").text(score + " Breakfast Eaten This Month!");
+              }
           } else {
               // doc.data() will be undefined in this case
               console.log("No such document!");
@@ -24,11 +41,8 @@ function getScore() {
       }).catch((error) => {
           console.log("Error getting document:", error);
       });
-
       updateAvatar();
-      document.getElementById("breakfastTrue").style.width = score;
-      document.getElementById("breakfastFalse").style.width = falseScore;
-      $("#stat-goes-here").text(score);
+      
 
       } else {
         // User is signed out
@@ -47,7 +61,8 @@ function addScore() {
       userRef.update({
         bCount: firebase.firestore.FieldValue.increment(1)
       });
-      updateAvatar();
+      
+      getScore();
 
     } else {
       // User is signed out
@@ -66,8 +81,8 @@ function undoScore() {
       await userRef.update({
         bCount: firebase.firestore.FieldValue.increment(-1)
       });
-
-      getScore();
+      
+      updateAvatar();
 
     } else {
       // User is signed out
@@ -82,9 +97,14 @@ function updateAvatar() {
     if (user) {
       var uid = user.uid;
       var userRef = await db.collection('users').doc(uid);
+      var userHistoryRef = db.collection('users/' + uid + '/history');
       var currentScore;
       var currentImg;
       var num;
+
+      userHistoryRef.get().then(snap => {
+        size = snap.size // will return the collection size
+      });
 
       await userRef.get().then(async (doc) => {
           if (doc.exists) {
@@ -96,7 +116,10 @@ function updateAvatar() {
               console.log(avatar)
               console.log(currentScore)
 
-              if (currentScore >= 80 || currentScore == isNaN) {
+              //IF NAN -> NEW USER, HAPPY PLANT FOR FIRST DAY
+              if(isNaN(currentScore)) {
+                num = 0;
+              } else if (currentScore >= 80 || dayN == 1 || size <= 3) {
                 num = 0;
               } else if (currentScore >= 50) {
                 num = 1;
@@ -105,7 +128,6 @@ function updateAvatar() {
               }
 
               currentImg = "../images/avatars/" + avatar + "" + num + ".png";
-              console.log(currentImg)
 
               document.getElementById("img").src = currentImg;
 

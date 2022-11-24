@@ -98,9 +98,7 @@ function undoLog(){
 
         await docHistoryRef.get().then(async (doc) => {
           if (doc.exists) {
-            console.log(doc.get("breakfast"));
             if (await doc.get("breakfast") == true) {
-              console.log("hi");
               undoScore();
             }
           } else {
@@ -122,6 +120,7 @@ function undoLog(){
       }
 
       weekLog();
+      getScore();
 
       document.getElementById("breakfastButtons").style.display = "flex";
       document.getElementById("question").style.display = "block";
