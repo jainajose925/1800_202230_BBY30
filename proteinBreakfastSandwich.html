@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Breakfast Recipes</title>
-    <meta name="recipes template" content="RecipesBrowser">
+    <title>Protein Breakfast Sandwich</title>
+    <meta name="recipes" content="each Recipe">
 
     <!------------------------>
     <!-- Required meta tags -->
@@ -44,39 +44,59 @@
     <!------------------------------>
 
     <!-- the body of your page goes here -->
+
     <!-- our own navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
 
     <div class="container-fluid bg-light text-dark p-5">
         <div class="container bg-light p-5">
-            <h1 class="display-4">Breakfast Recipes</h1>
+            <h2>How to make a Protein Breakfast Sandwich</h2>
+            <div id="details-go-here"></div>
         </div>
     </div>
 
-    <div class="container">
-        <h1>High Protein</h1>
-        <!-- Here is container for cards  -->
-        <div class="container">
-            <div id="recipeCardGroup" class="row row-cols-auto">
-            </div>
-        </div>
-    </div> 
-
     <!-- Templates for general use, not displayed -->
+    <div class="b-example-divider"></div>
+        <div class="container my-5">
+            <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border">
+                <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                    <h1 class="display-4 fw-bold lh-1">Ingredients</h1>
+                    <ul class="lead">
+                        <li>English muffin, toasted</li>
+                        <li>1/4 cup black beans</li>
+                        <li>Pinch of chili powder</li>
+                        <li>Pinch of garlic powder</li>
+                        <li>1/4 avocado</li>
+                        <li>1 large egg</li>
+                        <li>1/2 ounce cheddar cheese, grated</li>
+                        <li>Hot sauce</li>
+                        <li>Salt and pepper</li>
+                    </ul>
 
-    <template id="recipeCardTemplate">
-        <div class="card">
-            <!-- <img class="img"> -->
-            <img class="card-image card-img-top" src="..." alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Recipe Title</h5>
-                <p class="card-details">placeholder</p>
-                <p class="card-time">placeholder</p>
-                <a href="proteinBreakfastSandwich.html" style="float: right" class="btn btn-primary card-href details">Details</a>
-                <i class="material-icons">bookmark_border</i>
+                </div>
+                <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+                    <img class="rounded-lg-3" src="./images/PB01.jpg" alt="" height="300" width="500">
+                </div>
             </div>
         </div>
-    </template>
+    
+
+    <div class="container my-5">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border">
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+                <h1 class="display-4 fw-bold lh-1">Instructions</h1>
+                <ol class="lead">
+                    <li>Toast English muffin.</li>
+                    <li>Whisk egg in a bowl and microwave on high for 65 seconds. Remove egg and fold it into a circle
+                        shape the size of the muffin. Top with cheese and microwave for another 15 seconds.</li>
+                    <li>Mash black beans (drained and rinsed) with chili powder, garlic, and a pinch of salt and pepper.</li>
+                    <li>Spread black beans on the english muffin and top with the avocado. Place hot cheesy egg on top
+                        of the 'cado and season with salt and pepper. Add a dash of hot sauce.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
 
     <!-- our own footer goes here-->
 
@@ -85,7 +105,8 @@
     <!---------------------------------------------->
     <script src="./scripts/FirestoreAPI_TEAM30.js"></script>
     <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/recipes.js"></script>
+    <script src="./scripts/eachRecipe.js"></script>
+
 
     <!-- <script src="./scripts/script.js"></script> -->
 </body>
