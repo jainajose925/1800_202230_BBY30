@@ -238,3 +238,26 @@ function logout() {
       // An error happened.
     });
 }
+
+
+
+
+// function to make alert to show up at different times.
+function eatNotification(){
+
+  const d = new Date();
+  const hour = d.getHours();
+
+  console.log(hour + " = current time");
+
+  if (hour == 20){
+    console.log("its 8pm " + hour);
+    alert("Get tomorrows Breakfast ready!");
+
+  } else if (hour == 9){
+    console.log("its 9am " + hour);
+    alert("Make Sure you eat your breakfast!!");
+  }
+   
+}
+eatNotification()
