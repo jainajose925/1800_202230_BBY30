@@ -1,0 +1,17 @@
+.btn-success {
+    color:#F3EBE3;
+    font-size: 150%;
+    background-color:#7CBC9C;
+    border-color: #6CAC8C;
+    border-width: thick
+}
+
+body {
+    background-color: #a7c4b3;
+}
+
+h1 {
+    margin-top: 50px;
+    border: solid;
+    
+}

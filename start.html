@@ -30,69 +30,37 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="./styles/avatar.css">
+  <link rel="stylesheet" href="./styles/start.css">
 
 </head>
 
-<body id="all">
+<body>
 
   <!------------------------------>
   <!-- Your HTML Layout go here -->
   <!------------------------------>
-<div id="container">
+  <div class="container">
 
-
-    <h2 id="head">Select your Buddy!</h2>
-
-    <div class="card1">
-        <img class="card-img-top" src="/images/avatars/banana0.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Benny the Banana</h5>
-          <p class="card-text"></p>
-          <a id="btn1" class="btn btn-primary" onclick="saveBanana()">Pick Me!</a>
+    <div class="col text-center">
+        <h1 class="display-4 fw-bold">Welcome to <br>Botanical Breakfast!</h1>
+    </div>
+    <div class="px-4 pt-5 my-5 text-center border-bottom">
+        <div class="overflow-hidden" style="max-height: 40vh;">
+            <div class="container px-5">
+                <img src="images/avatars/cactus0.png" class="img-fluid mb-4" alt="Example image"
+                    width="auto" height="300" loading="lazy">
+            </div>
         </div>
-      </div>
-
-      <div class="card2">
-        <img class="card-img-top" src="images/avatars/cactus0.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Carl the Cactus</h5>
-          <p class="card-text"></p>
-          <a id="btn2" class="btn btn-primary" onclick="saveCactus()">Pick Me!</a>
+        <div class="col-lg-6 mx-auto">
+            <h4 class="display-6 fw-bold">Track and make your breakfast with our "make it, take it" meals!</h4>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                <a href="login.html" class="btn btn-success" role="button">Log In/Sign Up</a>
+            </div>
         </div>
-      </div>
-
-
-
-      <div class="card4" style="width: 18rem;">
-        <img class="card-img-top" src="/images/avatars/egg0.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Reggie the Egg</h5>
-          <p class="card-text"></p>
-          <a id="btn3" class="btn btn-primary" onclick="saveEgg()">Pick Me!</a>
-        </div>
-      </div>
-
-      <div class="card5" style="width: 18rem;">
-        <img class="card-img-top" src="/images/avatars/flower0.png" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Sally the SunFlower</h5>
-          <p class="card-text"></p>
-          <a id="btn4" class="btn btn-primary" onclick="saveFlower()">Pick Me!</a>
-        </div>
-      </div>
-
-
-
-
-
+</div>
+    
 </div>
 
-
-  
-
-
- 
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
@@ -100,10 +68,9 @@
   <!-- Link to scripts of your own -->
   <script src="./scripts/FirestoreAPI_TEAM30.js"></script>
   <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/avatar.js"></script>
+  <script src="./scripts/start.js"></script>
   
   
-
 </body>
 
 </html>

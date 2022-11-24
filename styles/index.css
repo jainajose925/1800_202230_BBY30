@@ -101,7 +101,6 @@
     padding: 2px;
 }
 
-
 #sun {grid-area: sun;background-color: lightgray;text-align: center;}
 #mon {grid-area: mon;background-color: lightgray;text-align: center;}
 #tue {grid-area: tue;background-color: lightgray;text-align: center;}

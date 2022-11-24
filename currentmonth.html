@@ -23,9 +23,13 @@
 
     <link rel="stylesheet" href="./styles/calendar.css">
 
+    <script src="./scripts/skeleton.js"></script>
+
 </head>
 
 <body>
+    <div id="navbarPlaceholder"></div>
+
     <div id="sky">
         <header>
             <div class="action">
@@ -94,7 +98,7 @@
     </div>
 
     <div id = "grass">
-        <h4>Your Stats This Month: <span id ="stat-goes-here"></span></h4>
+        <h4><span id ="stat-goes-here"></span></h4>
         <div id="bprogress" class="progress">
           <div id = "breakfastTrue" class="progress-bar bg-success" role="progressbar" aria-label="Segment one" style="width: 50%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
           <div id = "breakfastFalse" class="progress-bar bg-danger" role="progressbar" aria-label="Segment two" style="width: 50%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
@@ -106,6 +110,7 @@
     </div>
 
     <script src="./scripts/FirestoreAPI_TEAM30.js"></script>
+    
     <script src="./scripts/score.js"></script>
     <script src="./scripts/calendar.js"></script>
     

@@ -1,14 +1,15 @@
 #all{
     background-image: url(/images/26302.jpg);
     background-position: center;
-
+    height: 100%;
+    width: 100%;
 }
 #container{
 
     display: grid;
 
 
-    grid-template-columns: .5fr .5fr;
+    grid-template-columns: 50% 50%;
     grid-template-rows: .2fr .9fr .9fr 1fr;
     grid-template-areas: 
     "h1  h1"
@@ -20,6 +21,11 @@
     padding-top: 50pt;
     padding-left: 35pt;
     grid-area: h1;
+}
+
+img {
+    height: 200px;
+    width: auto;
 }
 
 .card1{
@@ -35,3 +41,5 @@
 .card5{
     grid-area: c5;
 }
+
+
