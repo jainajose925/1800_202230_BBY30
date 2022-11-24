@@ -13,26 +13,26 @@ firebase.auth().onAuthStateChanged(user => {
   }
 });
 
-function writeRecipes1() {
+function writeRecipes() {
     //define a variable for the collection you want to create in Firestore to populate data
     var recipesRef = db.collection("recipes");
 
     recipesRef.add({
-        code: "R01",
+        code: "MEO",
         name: "Microwave Egg Oatmeal",    //replace with your own city?
         time: "5 mins",
         details: "Breakfast Description",
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
     recipesRef.add({
-        code: "GG01",
+        code: "PB01",
         name: "Protein Breakfast Sandwich",    //replace with your own city?
         time: "5 mins",
         details: "Breakfast Description",
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
     recipesRef.add({
-        code: "PB01",
+        code: "TTS",
         name: "Turmeric Tofu Scramble",    //replace with your own city?
         time: "7 mins",
         details: "Breakfast Description",
@@ -62,11 +62,9 @@ function populateCardsDynamically() {
 
           testRecipeCard.querySelector('a').onclick = () => setRecipeData(recipeID);
   
-          //next 2 lines are new for demo#11
-          //this line sets the id attribute for the <i> tag in the format of "save-hikdID" 
-          //so later we know which hike to bookmark based on which hike was clicked
+          
           testRecipeCard.querySelector('i').id = 'save-' + recipeID;
-          // this line will call a function to save the hikes to the user's document             
+
           testRecipeCard.querySelector('i').onclick = () => saveBookmark(recipeID);
   
           testRecipeCard.querySelector('img').src = `./images/${recipeID}.jpg`;
@@ -75,17 +73,12 @@ function populateCardsDynamically() {
         })
       })
   }
-  populateCardsDynamically();
 
   function setRecipeData(id) {
     localStorage.setItem('recipeID', id);
   }
   
-  //-----------------------------------------------------------------------------
-  // This function is called whenever the user clicks on the "bookmark" icon.
-  // It adds the hike to the "bookmarks" array
-  // Then it will change the bookmark icon from the hollow to the solid version. 
-  //-----------------------------------------------------------------------------
+  
   function saveBookmark(recipeID) {
     currentUser.set({
       bookmarks: firebase.firestore.FieldValue.arrayUnion(recipeID)
