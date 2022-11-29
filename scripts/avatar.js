@@ -15,14 +15,13 @@ function saveEgg() {
     saveAvatar("egg");
 }
 
-
 function saveAvatar(name){
     firebase.auth().onAuthStateChanged(async (user) => {
         if (user) {
           var uid = user.uid;
           var userRef = await db.collection('users').doc(uid);
     
-          await userRef.set({
+          await userRef.update({
             avatar: name
           }).then(function () {
             window.location.assign("index.html"); 

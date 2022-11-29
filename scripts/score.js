@@ -19,7 +19,7 @@ function getScore() {
 
               if (isNaN(stat)) {
                 $("#stat-goes-here").text("Log your first day!");
-              } else if ((dayN == 1 && stat > 1)) {
+              } else if ((dayN == 1 && stat < 1)) {
                 await userRef.set({
                     bCount: 0
                 });
@@ -61,8 +61,6 @@ function addScore() {
       userRef.update({
         bCount: firebase.firestore.FieldValue.increment(1)
       });
-      
-      getScore();
 
     } else {
       // User is signed out
@@ -81,8 +79,6 @@ function undoScore() {
       await userRef.update({
         bCount: firebase.firestore.FieldValue.increment(-1)
       });
-      
-      updateAvatar();
 
     } else {
       // User is signed out

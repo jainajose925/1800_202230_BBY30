@@ -7,11 +7,10 @@ var uiConfig = {
         var user = authResult.user;                            // get the user object from the Firebase authentication database
         if (authResult.additionalUserInfo.isNewUser) { 
             var id = user.uid
-            db.collection("users").doc(id).set({         //write to firestore. We are using the UID for the ID in users collection
+            db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
                     name: user.displayName,                    //"users" collection
                     email: user.email,
-                    country: "Canada",
-                    school: "BCIT"                        
+                    country: "Canada",                       
                 }).then(function () {
                     console.log("New user added to firestore");
                     window.location.assign("avatarSelect.html");       

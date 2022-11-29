@@ -120,7 +120,6 @@ function undoLog(){
       }
 
       weekLog();
-      getScore();
 
       document.getElementById("breakfastButtons").style.display = "flex";
       document.getElementById("question").style.display = "block";
@@ -158,9 +157,8 @@ function breakfastTrue() {
             date: firebase.firestore.FieldValue.serverTimestamp()  
         });
 
-        addScore();
-
         logDone();
+        addScore();
         weekLog();
         } else {
           // User is signed out
