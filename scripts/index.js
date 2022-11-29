@@ -235,3 +235,31 @@ function logout() {
       // An error happened.
     });
 }
+
+
+
+
+// function to make alert to show up at different times.
+function eatNotification(){
+
+  const d = new Date();
+  const hour = d.getHours();
+
+  const m = new Date();
+  const min = m.getMinutes();
+
+  console.log(hour + ":" + min +" = current time");
+
+  if (hour == 20 && min == 1){
+    console.log("its 8pm " + hour);
+    swal("Time to prepare tomorrow's breakfast", "Check the recipes page for ideas.", "info");
+
+  } else if (hour == 9 && min == 1){
+    console.log("its 9am " + hour);
+    swal("Don't forget to take your breakfast!", "Conquer the Day!", "info");
+  }
+   
+}
+eatNotification()
+
+

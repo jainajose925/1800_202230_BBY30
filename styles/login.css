@@ -2,5 +2,6 @@ body{
     background-image: url(/images/26302.jpg);
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     margin: 80px;
 }
