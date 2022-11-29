@@ -252,13 +252,13 @@ function eatNotification(){
 
   console.log(hour + ":" + min +" = current time");
 
-  if (hour == 20 && min == 1){
+  if (hour == 17 && min == 32){
     console.log("its 8pm " + hour);
-    swal("You should make your Breakfast tomorrow", "Check the recipes for ideas.");
+    swal("Time to prepare tomorrows's breakfast", "Check the recipes page for ideas.", "info");
 
-  } else if (hour == 9 && min == 1){
+  } else if (hour == 17 && min == 33){
     console.log("its 9am " + hour);
-    swal("Make Sure you take your breakfast", "Conquer the Day!", "info");
+    swal("Don't forget to take your breakfast!", "Conquer the Day!", "info");
   }
    
 }
