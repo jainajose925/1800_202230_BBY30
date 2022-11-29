@@ -247,16 +247,21 @@ function eatNotification(){
   const d = new Date();
   const hour = d.getHours();
 
-  console.log(hour + " = current time");
+  const m = new Date();
+  const min = m.getMinutes();
 
-  if (hour == 20){
+  console.log(hour + ":" + min +" = current time");
+
+  if (hour == 17 && min == 8){
     console.log("its 8pm " + hour);
-    alert("Get tomorrows Breakfast ready!");
+    swal("You should make your Breakfast tomorrow", "Check the recipes for ideas.");
 
-  } else if (hour == 9){
+  } else if (hour == 17 && min == 5){
     console.log("its 9am " + hour);
-    alert("Make Sure you eat your breakfast!!");
+    swal("Make Sure you take your breakfast", "Conquer the Day!", "info");
   }
    
 }
 eatNotification()
+
+
