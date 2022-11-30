@@ -433,17 +433,17 @@ function populateCardsDynamically1() {
   }
   
   
-  function saveBookmark(recipeID1) {
+  function saveBookmark(recipeID) {
     currentUser.set({
-      bookmarks: firebase.firestore.FieldValue.arrayUnion(recipeID1)
+      bookmarks: firebase.firestore.FieldValue.arrayUnion(recipeID)
     }, {
       merge: true
     })
       .then(function () {
         console.log("bookmark has been saved for: " + currentUser);
-        var iconID1 = 'save-' + recipeID1;
+        var iconID = 'save-' + recipeID;
 
-        document.getElementById(iconID1).innerText = 'bookmark';
+        document.getElementById(iconID).innerText = 'bookmark';
       });
   }
 
