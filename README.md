@@ -9,6 +9,8 @@ This browser based web application to ...
 * Hi my name is Jaskaran. I am excited for this project cause of you guys.
 Hi my name is Jaina :)
 Hello, it's Pavanpreet!
+
+HOSTING LINK: https://botanical-breakfast.web.app/
 	
 ## Technologies
 Technologies used for this project:
