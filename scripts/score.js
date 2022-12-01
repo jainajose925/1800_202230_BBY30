@@ -17,11 +17,11 @@ function getScore() {
 
               if (isNaN(stat)) {
                 $("#stat-goes-here").text("Log your first day!");
-              } else if ((dayN == 1 && stat < 1)) {
-                await userRef.set({
+              } else if ((dayN == 1 && (stat > 1))) {
+                await userRef.update({
                     bCount: 0
                 });
-                stat = await doc.get('bCount');
+                stat = 0;
                 $("#stat-goes-here").text("Log your first day of the month!");
               } else {
                 //GET PERCENTAGE
