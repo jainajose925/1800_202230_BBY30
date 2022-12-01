@@ -22,118 +22,79 @@ firebase.auth().onAuthStateChanged(user => {
   }
 });
 
-function writeRecipes1() {
+function writeRecipes() {
     //define a variable for the collection you want to create in Firestore to populate data
-    var recipesRef = db.collection("recipes1");
+    var recipesRef = db.collection("recipes");
 
     recipesRef.doc("name1").set({
         code1: "MEO",
         name1: "Microwave Egg Oatmeal",    //replace with your own city?
         time1: "5 mins",
-        details1: "Breakfast Description",
+        details1: "Excellent source of protein!",
         last_updated: firebase.firestore.FieldValue.serverTimestamp()
     });
-}
 
-function writeRecipes2() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var recipesRef = db.collection("recipes2");
-
-  recipesRef.doc("name2").set({
+    recipesRef.doc("name2").set({
       code2: "PB01",
       name2: "Protein Breakfast Sandwich",    //replace with your own city?
       time2: "5 mins",
-      details2: "Breakfast Description",
+      details2: "Quick and easy!",
       last_updated: firebase.firestore.FieldValue.serverTimestamp()
-  });
-}
+    });
 
-function writeRecipes3() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var recipesRef = db.collection("recipes3");
-
-  recipesRef.doc("name3").set({
+    recipesRef.doc("name3").set({
       code3: "TTS",
       name3: "Turmeric Tofu Scramble",    //replace with your own city?
       time3: "7 mins",
-      details3: "Breakfast Description",
+      details3: "Healthy and delicious!",
       last_updated: firebase.firestore.FieldValue.serverTimestamp()
-  });
-}
+    });
 
-function writeRecipes4() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var recipesRef = db.collection("recipes4");
-
-  recipesRef.doc("name4").set({
+    recipesRef.doc("name4").set({
       code4: "VQ",
       name4: "Veggie Quesadilla",    //replace with your own city?
       time4: "5 mins",
-      details4: "Breakfast Description",
+      details4: "Customizable and easy!",
       last_updated: firebase.firestore.FieldValue.serverTimestamp()
-  });
-}
+    });
 
-function writeRecipes5() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var recipesRef = db.collection("recipes5");
-
-  recipesRef.doc("name5").set({
+    recipesRef.doc("name5").set({
       code5: "VMF",
       name5: "Veggie Mini Frittatas",    //replace with your own city?
       time5: "5 mins",
-      details5: "Breakfast Description",
+      details5: "Quick veggie option!",
       last_updated: firebase.firestore.FieldValue.serverTimestamp()
-  });
-}
+    });
 
-function writeRecipes6() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var recipesRef = db.collection("recipes6");
-
-  recipesRef.doc("name6").set({
+    recipesRef.doc("name6").set({
       code6: "AT",
       name6: "Avocado Toast",    //replace with your own city?
       time6: "5 mins",
-      details6: "Breakfast Description",
+      details6: "Go-to for many!",
       last_updated: firebase.firestore.FieldValue.serverTimestamp()
-  });
-}
+    });
 
-function writeRecipes7() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var recipesRef = db.collection("recipes7");
-
-  recipesRef.doc("name7").set({
+    recipesRef.doc("name7").set({
       code7: "PRB",
       name7: "Protein Bar",    //replace with your own city?
-      details7: "Breakfast Description",
+      details7: "Fast and rich!",
       last_updated: firebase.firestore.FieldValue.serverTimestamp()
-  });
-}
+    });
 
-function writeRecipes8() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var recipesRef = db.collection("recipes8");
-
-  recipesRef.doc("name8").set({
+    recipesRef.doc("name8").set({
       code8: "SMU",
       name8: "Smoothie",    //replace with your own city?
-      details8: "Breakfast Description",
+      details8: "As healthy as can be!",
       last_updated: firebase.firestore.FieldValue.serverTimestamp()
-  });
-}
+    });
 
-function writeRecipes9() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var recipesRef = db.collection("recipes9");
-
-  recipesRef.doc("name9").set({
+    recipesRef.doc("name9").set({
       code9: "FRU",
       name9: "Fruits",    //replace with your own city?
-      details9: "Breakfast Description",
+      details9: "The old trusty!",
       last_updated: firebase.firestore.FieldValue.serverTimestamp()
-  });
+    });
+
 }
 
 
@@ -142,8 +103,8 @@ function populateCardsDynamically1() {
     let recipeCardTemplate1 = document.getElementById("recipeCardTemplate1");  //card template
     let recipeCardGroup1 = document.getElementById("recipeCardGroup1");   //where to append card
   
-    db.collection("recipes1")
-
+    db.collection("recipes")
+       .where("code1","==","MEO")
     // .orderBy("last_updated")            //NEW LINE;  what do you want to sort by?
     // .limit(2)                       //NEW LINE:  how many do you want to get?
     .get()
@@ -176,8 +137,8 @@ function populateCardsDynamically1() {
     let recipeCardTemplate = document.getElementById("recipeCardTemplate2");  //card template
     let recipeCardGroup = document.getElementById("recipeCardGroup2");   //where to append card
   
-    db.collection("recipes2")
-
+    db.collection("recipes")
+      .where("code2","==","PB01")
     // .orderBy("last_updated")            //NEW LINE;  what do you want to sort by?
     // .limit(2)                       //NEW LINE:  how many do you want to get?
     .get()
@@ -210,8 +171,8 @@ function populateCardsDynamically1() {
     let recipeCardTemplate = document.getElementById("recipeCardTemplate3");  //card template
     let recipeCardGroup = document.getElementById("recipeCardGroup3");   //where to append card
   
-    db.collection("recipes3")
-
+    db.collection("recipes")
+       .where("code3","==","TTS")
     // .orderBy("last_updated")            //NEW LINE;  what do you want to sort by?
     // .limit(2)                       //NEW LINE:  how many do you want to get?
     .get()
@@ -244,8 +205,8 @@ function populateCardsDynamically1() {
     let recipeCardTemplate = document.getElementById("recipeCardTemplate4");  //card template
     let recipeCardGroup = document.getElementById("recipeCardGroup4");   //where to append card
   
-    db.collection("recipes4")
-
+    db.collection("recipes")
+       .where("code4","==","VQ")
     // .orderBy("last_updated")            //NEW LINE;  what do you want to sort by?
     // .limit(2)                       //NEW LINE:  how many do you want to get?
     .get()
@@ -278,8 +239,8 @@ function populateCardsDynamically1() {
     let recipeCardTemplate = document.getElementById("recipeCardTemplate5");  //card template
     let recipeCardGroup = document.getElementById("recipeCardGroup5");   //where to append card
   
-    db.collection("recipes5")
-
+    db.collection("recipes")
+       .where("code5","==","VMF")
     // .orderBy("last_updated")            //NEW LINE;  what do you want to sort by?
     // .limit(2)                       //NEW LINE:  how many do you want to get?
     .get()
@@ -312,8 +273,8 @@ function populateCardsDynamically1() {
     let recipeCardTemplate = document.getElementById("recipeCardTemplate6");  //card template
     let recipeCardGroup = document.getElementById("recipeCardGroup6");   //where to append card
   
-    db.collection("recipes6")
-
+    db.collection("recipes")
+       .where("code6","==","AT")
     // .orderBy("last_updated")            //NEW LINE;  what do you want to sort by?
     // .limit(2)                       //NEW LINE:  how many do you want to get?
     .get()
@@ -346,8 +307,8 @@ function populateCardsDynamically1() {
     let recipeCardTemplate = document.getElementById("recipeCardTemplate7");  //card template
     let recipeCardGroup = document.getElementById("recipeCardGroup7");   //where to append card
   
-    db.collection("recipes7")
-
+    db.collection("recipes")
+       .where("code7","==","PRB")
     // .orderBy("last_updated")            //NEW LINE;  what do you want to sort by?
     // .limit(2)                       //NEW LINE:  how many do you want to get?
     .get()
@@ -374,8 +335,8 @@ function populateCardsDynamically1() {
     let recipeCardTemplate = document.getElementById("recipeCardTemplate8");  //card template
     let recipeCardGroup = document.getElementById("recipeCardGroup8");   //where to append card
   
-    db.collection("recipes8")
-
+    db.collection("recipes")
+       .where("code8","==","SMU")
     // .orderBy("last_updated")            //NEW LINE;  what do you want to sort by?
     // .limit(2)                       //NEW LINE:  how many do you want to get?
     .get()
@@ -403,8 +364,8 @@ function populateCardsDynamically1() {
     let recipeCardTemplate = document.getElementById("recipeCardTemplate9");  //card template
     let recipeCardGroup = document.getElementById("recipeCardGroup9");   //where to append card
   
-    db.collection("recipes9")
-
+    db.collection("recipes")
+       .where("code9","==","FRU")
     // .orderBy("last_updated")            //NEW LINE;  what do you want to sort by?
     // .limit(2)                       //NEW LINE:  how many do you want to get?
     .get()
@@ -433,17 +394,24 @@ function populateCardsDynamically1() {
   }
   
   
-  function saveBookmark(recipeID1) {
+  function saveBookmark(recipeID) {
     currentUser.set({
-      bookmarks: firebase.firestore.FieldValue.arrayUnion(recipeID1)
+      bookmarks: firebase.firestore.FieldValue.arrayUnion(recipeID)
     }, {
       merge: true
     })
       .then(function () {
         console.log("bookmark has been saved for: " + currentUser);
-        var iconID1 = 'save-' + recipeID1;
+        var iconID = 'save-' + recipeID;
 
-        document.getElementById(iconID1).innerText = 'bookmark';
+        document.getElementById(iconID).innerText = 'bookmark';
       });
   }
+
+
+
+
+
+
+
 

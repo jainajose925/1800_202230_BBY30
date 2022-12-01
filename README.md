@@ -1,4 +1,4 @@
-1w## My Web Application (Add your Title here)
+1w## My Web Application (Botanical Breakfast)
 
 * [General info](#general-info)
 * [Technologies](#technologies)
