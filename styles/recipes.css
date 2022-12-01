@@ -11,6 +11,30 @@ body{
     font-size: 1.25rem;
 }
 
+h1 {
+    text-align: center;
+    padding: 4%;
+    background-color: #5ab4e1;
+    margin: auto;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    width: 98%;
+}
+
+h4 {
+    text-align: center;
+}
+
+#title {
+    background-color:transparent;
+    font-size: 3rem;
+}
+
+.card {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
 
 .display-4{
     font-weight:500;

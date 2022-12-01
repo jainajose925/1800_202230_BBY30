@@ -18,6 +18,7 @@ function getBookmarks(user) {
                 console.log(thisRecipeID);
                 db.collection("recipes").where("code", "==", thisRecipeID).get().then(snap => {
                     size = snap.size;
+                    console.log(size)
                     queryData = snap.docs;
 
                     if (size == 1) {
