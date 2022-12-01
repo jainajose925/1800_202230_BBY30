@@ -8,3 +8,20 @@ function loadSkeleton(){
     //console.log($('#footerPlaceholder').load('./text/footer.html'));
 }
 loadSkeleton();  //invoke the function
+
+/*const logoutButton = document.getElementById("#logout")
+  logoutButton.addEventListener('click', function(){
+    logout()
+  }
+)*/
+
+
+function logout() {
+console.log("logging out user");
+firebase.auth().signOut().then(() => {
+    // Sign-out successful.
+    window.location.href = "login.html";
+  }).catch((error) => {
+    // An error happened.
+  });
+}

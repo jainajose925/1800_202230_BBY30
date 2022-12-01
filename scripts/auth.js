@@ -4,11 +4,11 @@ var uiConfig = {
     callbacks: {
       signInSuccessWithAuthResult: function (authResult, redirectUrl) {
         // User successfully signed in.
-        var user = authResult.user;                            // get the user object from the Firebase authentication database
+        var user = authResult.user;                            
         if (authResult.additionalUserInfo.isNewUser) { 
             var id = user.uid
-            db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
-                    name: user.displayName,                    //"users" collection
+            db.collection("users").doc(user.uid).set({         
+                    name: user.displayName,                    
                     email: user.email,
                     country: "Canada",                       
                 }).then(function () {
@@ -24,12 +24,9 @@ var uiConfig = {
         return false;
     },
       uiShown: function() {
-        // The widget is rendered.
-        // Hide the loader.
         document.getElementById('loader').style.display = 'none';
       }
     },
-    // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
     signInSuccessUrl: 'index.html',
     signInOptions: [

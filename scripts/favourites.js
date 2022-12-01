@@ -16,7 +16,7 @@ function getBookmarks(user) {
             let CardTemplate1 = document.getElementById("CardTemplate1");
             bookmarks.forEach(thisRecipeID => {
                 console.log(thisRecipeID);
-                db.collection("recipes1").where("code", "==", thisRecipeID).get().then(snap => {
+                db.collection("recipes").where("code", "==", thisRecipeID).get().then(snap => {
                     size = snap.size;
                     queryData = snap.docs;
 
@@ -35,7 +35,6 @@ function getBookmarks(user) {
                         console.log("Query has more than one data")
                     }
                     
-
                 })
 
             });

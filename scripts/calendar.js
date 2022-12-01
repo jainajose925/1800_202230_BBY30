@@ -25,7 +25,6 @@ function getDaysInMonth(year, month) {
   }
 
 var maxDate = getDaysInMonth(year, month);
-console.log(maxDate);
 
 //CHANGE GRID COLOURS DEPENDING ON LOG
 function monthLog() {

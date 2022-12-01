@@ -128,9 +128,6 @@ function undoLog(){
       document.getElementById(select).style.backgroundColor = "lightgray";
 
     });
-
-    
-
 }
 
 //GET RID OF BUTTONS IF USER HAS DONE TODAY'S LOG
@@ -156,7 +153,6 @@ function breakfastTrue() {
             breakfast: true,
             date: firebase.firestore.FieldValue.serverTimestamp()  
         });
-
         logDone();
         addScore();
         weekLog();
@@ -181,10 +177,8 @@ function breakfastFalse() {
             breakfast: false,
             date: firebase.firestore.FieldValue.serverTimestamp() 
         })
-
         logDone();
         weekLog();
-
         } else {
           // User is signed out
           // ...
@@ -198,9 +192,9 @@ weekLog();
 //LOG BREAKFAST
 const eat = document.getElementById("ate");
 const noeat = document.getElementById("noeat");
-const undoo = document.getElementById("undo");
+const undo = document.getElementById("undo");
 
-undoo.addEventListener("click", function() {
+undo.addEventListener("click", function() {
   undoLog()
 });
 
@@ -212,41 +206,10 @@ eat.addEventListener("click", function() {
     breakfastTrue()
 });
 
-
-//LOGOUT
-const logoutButton = document.querySelector('.logout')
-logoutButton.addEventListener('click', ()=>{
-    console.log("logging out user");
-    firebase.auth().signOut().then(() => {
-        // Sign-out successful.
-        window.location.href = "login.html";
-      }).catch((error) => {
-        // An error happened.
-      });
-  })
-
-
-function logout() {
-  console.log("logging out user");
-  firebase.auth().signOut().then(() => {
-      // Sign-out successful.
-      window.location.href = "login.html";
-    }).catch((error) => {
-      // An error happened.
-    });
-}
-
-
-
-
 // function to make alert to show up at different times.
 function eatNotification(){
-
-  const d = new Date();
-  const hour = d.getHours();
-
-  const m = new Date();
-  const min = m.getMinutes();
+  const hour = date.getHours();
+  const min = date.getMinutes();
 
   console.log(hour + ":" + min +" = current time");
 

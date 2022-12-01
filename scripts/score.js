@@ -10,8 +10,6 @@ function getScore() {
         var score;
         var stat;
 
-        //*********DELETE ALL DOCUMENTS IF MONTH IS CHANGED************
-
         await userRef.get().then(async (doc) => {
           if (doc.exists) {
               //GET BREAKFAST COUNT
@@ -42,8 +40,6 @@ function getScore() {
           console.log("Error getting document:", error);
       });
       updateAvatar();
-      
-
       } else {
         // User is signed out
         // ...
@@ -122,7 +118,6 @@ function updateAvatar() {
               } else {
                 num = 2;
               }
-
               currentImg = "../images/avatars/" + avatar + "" + num + ".png";
 
               document.getElementById("img").src = currentImg;
