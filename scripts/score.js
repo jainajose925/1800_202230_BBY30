@@ -18,7 +18,7 @@ function getScore() {
               if (isNaN(stat)) {
                 $("#stat-goes-here").text("Log your first day!");
               } else if ((dayN == 1 && (stat > 1))) {
-                await userRef.update({
+                await userRef.set({
                     bCount: 0
                 });
                 stat = 0;
@@ -118,6 +118,7 @@ function updateAvatar() {
               } else {
                 num = 2;
               }
+              console.log(stat);
               currentImg = "../images/avatars/" + avatar + "" + num + ".png";
 
               document.getElementById("img").src = currentImg;
