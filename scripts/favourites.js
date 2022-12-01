@@ -29,7 +29,6 @@ function getBookmarks(user) {
                         let newCard = CardTemplate.content.cloneNode(true);
                         newCard.querySelector('.card-title').innerHTML = recipeName;
                         newCard.querySelector('.card-details').innerHTML = recipeDetails;
-                        newCard.querySelector('a').onclick = () => setRecipeData(recipeID);
                         newCard.querySelector('img').src = `./images/${recipeID}.jpg`;
                         recipeCardGroup.appendChild(newCard);
                     } else {
