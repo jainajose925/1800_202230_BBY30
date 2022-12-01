@@ -24,7 +24,7 @@ function saveAvatar(name){
           await userRef.update({
             avatar: name
           }).then(function () {
-            window.location.assign("index.html"); 
+            window.location.assign("main.html"); 
         });
     
         } else {
