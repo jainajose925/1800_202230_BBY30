@@ -58,8 +58,9 @@ h5 {
 }
 
 #greenBoxL, #redBoxL {
+    break-after: always;
     margin-top: 15px;
-    flex: 80%;
+    flex: 95%;
 }
 
 #redBox {
